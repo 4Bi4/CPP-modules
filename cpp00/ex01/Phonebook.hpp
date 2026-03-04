@@ -1,33 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   contact.cpp                                        :+:      :+:    :+:   */
+/*   Phonebook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: labia-fe <labia-fe@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/18 14:53:46 by labia-fe          #+#    #+#             */
-/*   Updated: 2026/02/18 15:10:55 by labia-fe         ###   ########.fr       */
+/*   Created: 2026/02/18 14:29:33 by labia-fe          #+#    #+#             */
+/*   Updated: 2026/03/04 18:28:19 by labia-fe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "contact.hpp"
+#ifndef PHONEBOOK_HPP
+# define PHONEBOOK_HPP
 
-void	Contact::setName(const std::string &name)
-{
-	this->name = name;
-}
+# include "Contact.hpp"
+# include <cstdlib>
+# include <limits>
 
-void	Contact::setNumber(const std::string &number)
+class PhoneBook
 {
-	this->number = number;
-}
+private:
+	Contact	contacts[8];
+	int		current;
+	int		amount;
+	
+public:
+	PhoneBook();
+	~PhoneBook();
+	void addContact();
+	void searchContact();
+};
 
-std::string	Contact::getName() const
-{
-	return (this->name);
-}
-
-std::string	Contact::getNumber() const
-{
-	return (this->number);
-}
+#endif

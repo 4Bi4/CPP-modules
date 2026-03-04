@@ -1,12 +1,11 @@
-NAME		= phonebook
+NAME		=	OCF
 
-COMPILER	= c++
+COMPILER	=	c++
 
-CFLAGS		= -Wall -Wextra -Werror -std=c++98
+CFLAGS		=	-Wall -Wextra -Werror -std=c++98
 
-SRC			= Contact.cpp \
-			  Phonebook.cpp \
-			  main.cpp
+SRC			=	main.cpp \
+				Fixed.cpp
 
 all: $(NAME)
 
