@@ -6,7 +6,7 @@
 /*   By: labia-fe <labia-fe@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 15:13:12 by labia-fe          #+#    #+#             */
-/*   Updated: 2026/03/04 18:28:16 by labia-fe         ###   ########.fr       */
+/*   Updated: 2026/03/05 18:20:08 by labia-fe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,39 +20,48 @@ PhoneBook::PhoneBook()
 
 PhoneBook::~PhoneBook() {}
 
+
+//	Helper function, prompts the user for a field and validates the input
+//  RETURN: the input std::string, or empty string if EOF is reached
+std::string promptField(std::string fieldName)
+{
+    std::string input = "";
+	
+    while (1)
+    {
+        std::cout << "Enter " << fieldName << ": ";
+        if (!std::getline(std::cin, input))
+        {
+            std::cout << std::endl;
+            return ("");
+        }
+        else if (input.empty() || (input.find_first_not_of(' ') == std::string::npos))
+            std::cout << fieldName << " cannot be empty :(, try again" << std::endl;
+        else
+            break ;
+    }
+    return (input);
+}
+
 void	PhoneBook::addContact()
 {
-	std::string	name, number;
+	std::string	firstName;
+	std::string	lastName;
+	std::string	nickname;
+	std::string	phoneNumber;
+	std::string	darkestSecret;
 
-	while (1)
-	{
-		std::cout << "Enter name: ";
-		if (!std::getline(std::cin, name))
-		{
-			std::cout << std::endl;
-			return ;
-		}
-		else if (name.empty() || (name.find_first_not_of(' ') == std::string::npos))
-			std::cout << "Name cannot be empty :(, try again" << std::endl;
-		else
-			break ;
-	}
-	contacts[current].setName(name);
+	firstName = promptField("first name");
+	lastName = promptField("last name");
+	nickname = promptField("nickname");
+	phoneNumber = promptField("phone number");
+	darkestSecret = promptField("darkest secret");
 
-	while (1)
-	{
-		std::cout << "Enter number: ";
-		if (!std::getline(std::cin, number))
-		{
-			std::cout << std::endl;
-			return ;
-		}
-		else if (number.empty() || (number.find_first_not_of(' ') == std::string::npos))
-			std::cout << "Number cannot be empty >:(, try again" << std::endl;
-		else
-			break ;
-	}
-	contacts[current].setNumber(number);
+	contacts[current].setFirstName(firstName);
+	contacts[current].setLastName(lastName);
+	contacts[current].setNickname(nickname);
+	contacts[current].setPhoneNumber(phoneNumber);
+	contacts[current].setDarkestSecret(darkestSecret);
 
 	current++;
 	if (amount < 8)
@@ -61,12 +70,14 @@ void	PhoneBook::addContact()
 		current = 0;
 }
 
-std::string	formatField(const std::string &str)
+//	Helper function for search contact, formats a field to fit in 10 characters
+//	RETURN: the formatted field
+std::string	formatField(const std::string &field)
 {
-	if (str.length() > 10)
-		return (str.substr(0,9) + ".");
+	if (field.length() > 10)
+		return (field.substr(0,9) + ".");
 	else
-		return (std::string(10 - str.length(), ' ') + str);
+		return (std::string(10 - field.length(), ' ') + field);
 }
 
 void	PhoneBook::searchContact()
@@ -78,10 +89,13 @@ void	PhoneBook::searchContact()
 		std::cout << "No contact data." << std::endl;
 		return ;
 	}
-	std::cout << "_|__________" << std::endl;
+	std::cout << "0|First Name| Last Name|  Nickname" << std::endl;
+	std::cout << "_|________________________________" << std::endl;
 	while (i < amount)
 	{
-		std::cout << (i + 1) << "|" << formatField(contacts[i].getName()) << std::endl;
+		std::cout << (i + 1) << "|" << formatField(contacts[i].getFirstName())
+		<< "|" << formatField(contacts[i].getLastName())
+		<< "|" << formatField(contacts[i].getNickname()) << std::endl;
 		i++;
 	}
 	std::cout << "Select a contact > ";
@@ -98,8 +112,11 @@ void	PhoneBook::searchContact()
 		{
 			i--;
 			std::cout << std::endl;
-			std::cout << "Name: " << contacts[i].getName() << std::endl;
-			std::cout << "Number: " << contacts[i].getNumber() << std::endl;
+			std::cout << "First name: " << contacts[i].getFirstName() << std::endl;
+			std::cout << "Last name: " << contacts[i].getLastName() << std::endl;
+			std::cout << "Nickname: " << contacts[i].getNickname() << std::endl;
+			std::cout << "Phone number: " << contacts[i].getPhoneNumber() << std::endl;
+			std::cout << "Darkest secret: " << contacts[i].getDarkestSecret() << std::endl;
 			std::cout << std::endl;
 		}
 		else

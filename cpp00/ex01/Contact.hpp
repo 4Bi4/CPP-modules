@@ -6,7 +6,7 @@
 /*   By: labia-fe <labia-fe@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 14:28:41 by labia-fe          #+#    #+#             */
-/*   Updated: 2026/03/04 18:27:28 by labia-fe         ###   ########.fr       */
+/*   Updated: 2026/03/05 17:51:03 by labia-fe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,23 @@
 class Contact
 {
 private:
-	std::string name;
-	std::string number;
+	std::string firstName;
+	std::string lastName;
+	std::string nickname;
+	std::string phoneNumber;
+	std::string darkestSecret;
 
 public:
-	void setName(const std::string &name);
-	std::string getName() const;
-	void setNumber(const std::string &number);
-	std::string getNumber() const;
+	void setFirstName(const std::string &firstName);
+	std::string getFirstName() const;
+	void setLastName(const std::string &lastName);
+	std::string getLastName() const;
+	void setNickname(const std::string &nickname);
+	std::string getNickname() const;
+	void setPhoneNumber(const std::string &phoneNumber);
+	std::string getPhoneNumber() const;
+	void setDarkestSecret(const std::string &darkestSecret);
+	std::string getDarkestSecret() const;
 };
 
 #endif
