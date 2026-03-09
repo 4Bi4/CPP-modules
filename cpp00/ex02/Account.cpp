@@ -6,7 +6,7 @@
 /*   By: labia-fe <labia-fe@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/23 20:39:48 by labia-fe          #+#    #+#             */
-/*   Updated: 2026/02/23 22:06:09 by labia-fe         ###   ########.fr       */
+/*   Updated: 2026/03/09 20:23:26 by labia-fe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ int	Account::_totalNbWithdrawals = 0;
 Account::Account(int initial_deposit)
 	: _accountIndex(_nbAccounts), _amount(initial_deposit), _nbDeposits(0), _nbWithdrawals(0)
 {
+	if (initial_deposit < 0)
+		_amount = 0;
 	_nbAccounts++;
 	_totalAmount += initial_deposit;
 	Account::_displayTimestamp();
@@ -58,18 +60,49 @@ void	Account::displayAccountsInfos( void )
 
 void	Account::makeDeposit( int deposit )
 {
+	int	p_amount = deposit;
+
+	if (deposit < 0)
+		return ;
+
 	_amount += deposit;
+	_totalAmount += deposit;
 	_nbDeposits++;
 	_totalNbDeposits++;
+	Account::_displayTimestamp();
+	std::cout << "index:" << _accountIndex
+		<< ";p_amount:" << p_amount
+		<< ";amount:" << _amount
+		<< ";deposits:" << _nbDeposits
+		<< std::endl;
 }
 
 bool	Account::makeWithdrawal( int withdrawal )
 {
-	if (withdrawal > _amount)
+	if (withdrawal <= 0)
 		return (false);
+	if (withdrawal > _amount)
+	{
+		Account::_displayTimestamp();
+		std::cout << "index:" << _accountIndex
+			<< ";p_amount:" << withdrawal
+			<< ";amount:" << _amount
+			<< ";withdrawal:refused"
+			<< std::endl;
+		return (false);
+	}
+	int	p_amount = withdrawal;
+	
 	_amount -= withdrawal;
+	_totalAmount -= withdrawal;
 	_nbWithdrawals++;
 	_totalNbWithdrawals++;
+	Account::_displayTimestamp();
+	std::cout << "index:" << _accountIndex
+		<< ";p_amount:" << p_amount
+		<< ";amount:" << _amount
+		<< ";withdrawals:" << _nbWithdrawals
+		<< std::endl;
 	return (true);
 }
 
@@ -92,7 +125,7 @@ void	Account::_displayTimestamp( void )
 	std::time_t t = std::time(NULL);
 	std::tm *tm = std::localtime(&t);
 
-	// Format: [YYYYMMDD_HHMMSS] (zero-padded)
+	// Format: [YYYYMMDD_HHMMSS]
 	std::cout << '['
 		<< (tm->tm_year + 1900)
 		<< std::setw(2) << std::setfill('0') << (tm->tm_mon + 1)

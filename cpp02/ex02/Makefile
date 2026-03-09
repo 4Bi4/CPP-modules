@@ -1,4 +1,4 @@
-NAME		=	fixed
+NAME		=	fixed3.0
 
 COMPILER	=	c++
 
