@@ -6,7 +6,7 @@
 /*   By: labia-fe <labia-fe@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/04 17:38:37 by labia-fe          #+#    #+#             */
-/*   Updated: 2026/03/09 19:36:59 by labia-fe         ###   ########.fr       */
+/*   Updated: 2026/03/11 20:17:04 by labia-fe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,8 @@ private:
 	int					_Value;
 	static const int	_fractionalBits = 8;
 
-	friend std::ostream& operator<<(std::ostream& os, const Fixed& fixed);
 };
+
+std::ostream& operator<<(std::ostream& os, const Fixed& fixed);
 
 #endif
