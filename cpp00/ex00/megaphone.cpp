@@ -6,7 +6,7 @@
 /*   By: labia-fe <labia-fe@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/17 23:18:26 by labia-fe          #+#    #+#             */
-/*   Updated: 2026/02/17 23:18:31 by labia-fe         ###   ########.fr       */
+/*   Updated: 2026/03/11 20:11:36 by labia-fe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 std::string strCapitalizer(std::string str){
 	for (int i = 0; str[i]; i++)
-		str[i] = static_cast<char>(std::toupper(static_cast<unsigned char>(str[i])));
+		str[i] = (std::toupper((str[i])));
 	return (str);
 }
 
