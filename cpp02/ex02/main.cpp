@@ -6,7 +6,7 @@
 /*   By: labia-fe <labia-fe@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/04 17:38:45 by labia-fe          #+#    #+#             */
-/*   Updated: 2026/03/09 19:39:42 by labia-fe         ###   ########.fr       */
+/*   Updated: 2026/03/14 17:41:28 by labia-fe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,41 @@
 int main()
 {
 	Fixed a;
-	Fixed const b( 10 );
-	Fixed const c( 42.42f );
-	Fixed const d( b );
+	Fixed const b(Fixed(5.05f) * Fixed(2));
 
-	a = Fixed( 1234.4321f );
+	std::cout << "\na: " << a << std::endl;
 
-	std::cout << "a is " << a << std::endl;
-	std::cout << "b is " << b << std::endl;
-	std::cout << "c is " << c << std::endl;
-	std::cout << "d is " << d << std::endl;
+	std::cout << "\n=== ++a OPERATOR ===" << std::endl;
+	std::cout << "a: " << ++a << std::endl;
+	std::cout << "a: " << a << std::endl;
 
-	std::cout << "a is " << a.toInt() << " as integer" << std::endl;
-	std::cout << "b is " << b.toInt() << " as integer" << std::endl;
-	std::cout << "c is " << c.toInt() << " as integer" << std::endl;
-	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
+	std::cout << "\n=== a++ OPERATOR ===" << std::endl;
+	std::cout << "a: " << a++ << std::endl;
+	std::cout << "a: " << a << std::endl;
+
+	std::cout << "\n=== --a OPERATOR ===" << std::endl;
+	std::cout << "a: " << --a << std::endl;
+	std::cout << "a: " << a << std::endl;
+
+	std::cout << "\n=== a-- OPERATOR ===" << std::endl;
+	std::cout << "a: " << a-- << std::endl;
+	std::cout << "a: " << a << std::endl;
+
+	std::cout << "\n=== BOOLEANS ===" << std::endl;
+	std::cout << "a: " << a << "  b: " << b << std::endl;
+	std::cout << "a < b is " << (a < b) << std::endl;
+	std::cout << "a > b is " << (a > b) << std::endl;
+	std::cout << "a == b is " << (a == b) << std::endl;
+	std::cout << "a != b is " << (a != b) << std::endl;
+
+	std::cout << "\n=== ARITHMETIC OPERATORS ===" << std::endl;
+	std::cout << "a + b is " << (a + b) << std::endl;
+	std::cout << "a - b is " << (a - b) << std::endl;
+	std::cout << "a * b is " << (a * b) << std::endl;
+	std::cout << "a / b is " << (a / b) << std::endl;
+
+	std::cout << "\n=== MAX&MIN ===" << std::endl;
+	std::cout << "max between a(" << a << ") and b(" << b << ") is " << Fixed::max(a, b) << std::endl;
+	std::cout << "min between a(" << a << ") and b(" << b << ") is " << Fixed::min(a, b) << "\n" << std::endl;
 	return (0);
 }

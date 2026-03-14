@@ -6,7 +6,7 @@
 /*   By: labia-fe <labia-fe@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 18:48:32 by labia-fe          #+#    #+#             */
-/*   Updated: 2026/03/14 19:01:35 by labia-fe         ###   ########.fr       */
+/*   Updated: 2026/03/14 19:02:35 by labia-fe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@ Fixed::Fixed(int const value) : _Value(value << _fractionalBits) {}
 Fixed::Fixed(float const value) : _Value(roundf(value * (1 << _fractionalBits))) {}
 
 //	Assignment operator
-Fixed &Fixed::operator=(const Fixed& copy)
+Fixed& Fixed::operator=(const Fixed& other)
 {
-	if (this != &copy)
-		this->_Value = copy._Value;
+	if (this != &other)
+		this->_Value = other._Value;
 	return (*this);
 }
 

@@ -6,7 +6,7 @@
 /*   By: labia-fe <labia-fe@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/04 17:38:37 by labia-fe          #+#    #+#             */
-/*   Updated: 2026/03/14 17:33:02 by labia-fe         ###   ########.fr       */
+/*   Updated: 2026/03/14 17:47:14 by labia-fe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ public:
 	~Fixed();
 
 	//	Assignment operator
-	Fixed& operator=(const Fixed& copy);
+	Fixed& operator=(const Fixed& other);
 
 	//	Comparison operators
 	bool	operator>(const Fixed& other) const;
