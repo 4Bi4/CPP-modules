@@ -6,7 +6,7 @@
 /*   By: labia-fe <labia-fe@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/21 18:12:03 by labia-fe          #+#    #+#             */
-/*   Updated: 2026/03/22 22:22:06 by labia-fe         ###   ########.fr       */
+/*   Updated: 2026/03/24 21:00:30 by labia-fe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ int	main(void)
 	jose.whoAmI();
 	guille.highFivesGuys();
 	jose.guardGate();
-	guille.setAttackDamage(35);
 
 	for (int i = 0; i < 3; i++)
 	{

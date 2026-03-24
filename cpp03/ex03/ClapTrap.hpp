@@ -6,7 +6,7 @@
 /*   By: labia-fe <labia-fe@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/21 17:28:32 by labia-fe          #+#    #+#             */
-/*   Updated: 2026/03/22 21:15:20 by labia-fe         ###   ########.fr       */
+/*   Updated: 2026/03/24 21:04:10 by labia-fe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ public:
 	unsigned int	getEnergyPoints() const;
 	unsigned int	getAttackDamage() const;
 
-private:
+protected:
 	std::string		_name;
 	unsigned int	_hitPoints;
 	unsigned int	_energyPoints;

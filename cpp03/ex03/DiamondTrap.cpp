@@ -6,7 +6,7 @@
 /*   By: labia-fe <labia-fe@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/22 20:42:33 by labia-fe          #+#    #+#             */
-/*   Updated: 2026/03/22 22:21:56 by labia-fe         ###   ########.fr       */
+/*   Updated: 2026/03/24 21:06:30 by labia-fe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,9 @@ DiamondTrap::DiamondTrap(const std::string& name) : ClapTrap(name + "_clap_name"
 	this->setHitPoints(FragTrap::getHitPoints());
 	this->setEnergyPoints(ScavTrap::getEnergyPoints());
 	this->setAttackDamage(FragTrap::getAttackDamage());
+	std::cout << "HP " << this->getHitPoints();
+	std::cout << " EP " << this->getEnergyPoints();
+	std::cout << " AD " << this->getAttackDamage() << " ";
 	std::cout << "DiamondTrap name constructor called." << std::endl;
 }
 
