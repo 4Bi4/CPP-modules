@@ -6,7 +6,7 @@
 /*   By: labia-fe <labia-fe@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/04 17:38:45 by labia-fe          #+#    #+#             */
-/*   Updated: 2026/03/14 19:16:37 by labia-fe         ###   ########.fr       */
+/*   Updated: 2026/03/24 19:10:05 by labia-fe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int main(int ac, char *av[])
 	if (ac < 3)
 	{
 		std::cout << "Executing default values:\n" << "\na(0,0) b(1,0) c(0,1)\npoint(0.5,0.5)\n" << std::endl;
-		Point point(0.5, 0.5);
+		Point point(0.3, 0.3);
 		result = bsp(a, b, c, point);
 	}
 	else

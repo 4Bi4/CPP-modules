@@ -6,7 +6,7 @@
 /*   By: labia-fe <labia-fe@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/04 17:38:37 by labia-fe          #+#    #+#             */
-/*   Updated: 2026/03/14 17:33:02 by labia-fe         ###   ########.fr       */
+/*   Updated: 2026/03/24 19:08:56 by labia-fe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,6 @@ public:
 private:
 	int					_Value;
 	static const int	_fractionalBits = 8;
-
 };
 
 //	Stream insertion operator (printing rules)
