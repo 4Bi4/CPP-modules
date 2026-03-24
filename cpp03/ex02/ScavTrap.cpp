@@ -6,7 +6,7 @@
 /*   By: labia-fe <labia-fe@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/22 18:05:22 by labia-fe          #+#    #+#             */
-/*   Updated: 2026/03/22 20:09:45 by labia-fe         ###   ########.fr       */
+/*   Updated: 2026/03/24 22:08:17 by labia-fe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,17 @@
 ScavTrap::ScavTrap() : ClapTrap()
 {
 	this->setName("Default ScavTrap");
-	this->setHitPoints(100);
-	this->setEnergyPoints(50);
-	this->setAttackDamage(20);
+	this->setHitPoints(SCAVTRAP_HP);
+	this->setEnergyPoints(SCAVTRAP_EP);
+	this->setAttackDamage(SCAVTRAP_AD);
 	std::cout << "ScavTrap from ClapTrap created with default constructor." << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
-	this->setHitPoints(100);
-	this->setEnergyPoints(50);
-	this->setAttackDamage(20);
+	this->setHitPoints(SCAVTRAP_HP);
+	this->setEnergyPoints(SCAVTRAP_EP);
+	this->setAttackDamage(SCAVTRAP_AD);
 	std::cout << "ScavTrap from ClapTrap created." << std::endl;
 }
 

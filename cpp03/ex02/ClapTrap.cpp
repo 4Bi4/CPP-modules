@@ -6,13 +6,13 @@
 /*   By: labia-fe <labia-fe@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/21 17:41:36 by labia-fe          #+#    #+#             */
-/*   Updated: 2026/03/22 19:20:39 by labia-fe         ###   ########.fr       */
+/*   Updated: 2026/03/24 22:07:11 by labia-fe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap() : _name("???"), _hitPoints(10), _energyPoints(10), _attackDamage(0)
+ClapTrap::ClapTrap() : _name("???"), _hitPoints(CLAPTRAP_HP), _energyPoints(CLAPTRAP_EP), _attackDamage(CLAPTRAP_AD)
 {
 	std::cout << "ClapTrap default constructor called" << std::endl;
 }
@@ -22,7 +22,7 @@ ClapTrap::~ClapTrap()
 	std::cout << "ClapTrap default destructor called" << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string name) : _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0)
+ClapTrap::ClapTrap(std::string name) : _name(name), _hitPoints(CLAPTRAP_HP), _energyPoints(CLAPTRAP_EP), _attackDamage(CLAPTRAP_AD)
 {
 	std::cout << "ClapTrap " << this->_name << " created with name constructor." << std::endl;
 }

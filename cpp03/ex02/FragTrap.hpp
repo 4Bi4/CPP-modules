@@ -6,15 +6,20 @@
 /*   By: labia-fe <labia-fe@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/22 19:29:01 by labia-fe          #+#    #+#             */
-/*   Updated: 2026/03/22 22:04:35 by labia-fe         ###   ########.fr       */
+/*   Updated: 2026/03/24 22:07:39 by labia-fe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FRAGTRAP_HPP
 # define FRAGTRAP_HPP
+
 # include "ScavTrap.hpp"
 
-class FragTrap : public ClapTrap
+# define FRAGTRAP_HP 100
+# define FRAGTRAP_EP 100
+# define FRAGTRAP_AD 30
+
+class FragTrap : virtual public ClapTrap
 {
 public:
 	FragTrap();
