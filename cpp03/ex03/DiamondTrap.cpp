@@ -6,7 +6,7 @@
 /*   By: labia-fe <labia-fe@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/22 20:42:33 by labia-fe          #+#    #+#             */
-/*   Updated: 2026/03/24 21:06:30 by labia-fe         ###   ########.fr       */
+/*   Updated: 2026/03/24 21:58:17 by labia-fe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,23 @@
 
 DiamondTrap::DiamondTrap() : ClapTrap("Default_clap_name"), FragTrap("Default"), ScavTrap("Default"), _name("Default")
 {
-	this->setHitPoints(FragTrap::getHitPoints());
-	this->setEnergyPoints(ScavTrap::getEnergyPoints());
-	this->setAttackDamage(FragTrap::getAttackDamage());
+	FragTrap frag;
+	ScavTrap scav;
+
+	this->setHitPoints(frag.getHitPoints());
+	this->setEnergyPoints(scav.getEnergyPoints());
+	this->setAttackDamage(frag.getAttackDamage());
 	std::cout << "DiamondTrap default constructor called." << std::endl;
 }
 
 DiamondTrap::DiamondTrap(const std::string& name) : ClapTrap(name + "_clap_name"), FragTrap(name), ScavTrap(name), _name(name)
 {
-	this->setHitPoints(FragTrap::getHitPoints());
-	this->setEnergyPoints(ScavTrap::getEnergyPoints());
-	this->setAttackDamage(FragTrap::getAttackDamage());
-	std::cout << "HP " << this->getHitPoints();
-	std::cout << " EP " << this->getEnergyPoints();
-	std::cout << " AD " << this->getAttackDamage() << " ";
+	FragTrap frag;
+	ScavTrap scav;
+	
+	this->setHitPoints(frag.getHitPoints());
+	this->setEnergyPoints(scav.getEnergyPoints());
+	this->setAttackDamage(frag.getAttackDamage());
 	std::cout << "DiamondTrap name constructor called." << std::endl;
 }
 

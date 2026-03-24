@@ -6,7 +6,7 @@
 /*   By: labia-fe <labia-fe@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/22 19:28:53 by labia-fe          #+#    #+#             */
-/*   Updated: 2026/03/24 21:11:42 by labia-fe         ###   ########.fr       */
+/*   Updated: 2026/03/24 21:58:22 by labia-fe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,17 @@
 FragTrap::FragTrap() : ClapTrap()
 {
 	this->setName("Default FragTrap");
-	this->setHitPoints(100);
-	this->setEnergyPoints(100);
-	this->setAttackDamage(30);
+	this->setHitPoints(FRAGTRAP_HP);
+	this->setEnergyPoints(FRAGTRAP_EP);
+	this->setAttackDamage(FRAGTRAP_AD);
 	std::cout << "FragTrap from ClapTrap created with default constructor." << std::endl;
 }
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
-	this->setHitPoints(100);
-	this->setEnergyPoints(100);
-	this->setAttackDamage(30);
+	this->setHitPoints(FRAGTRAP_HP);
+	this->setEnergyPoints(FRAGTRAP_EP);
+	this->setAttackDamage(FRAGTRAP_AD);
 	std::cout << "FragTrap from ClapTrap created with name: " << this->getName() << std::endl;
 }
 

@@ -6,7 +6,7 @@
 /*   By: labia-fe <labia-fe@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/21 17:28:32 by labia-fe          #+#    #+#             */
-/*   Updated: 2026/03/24 21:04:10 by labia-fe         ###   ########.fr       */
+/*   Updated: 2026/03/24 21:36:45 by labia-fe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 # define CLAPTRAP_HPP
 
 # include <iostream>
+
+# define CLAPTRAP_HP 10
+# define CLAPTRAP_EP 10
+# define CLAPTRAP_AD 0
 
 class ClapTrap
 {
