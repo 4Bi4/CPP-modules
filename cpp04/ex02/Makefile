@@ -1,8 +1,8 @@
-NAME		=	polymorph
+NAME		=	abstract
 
 COMPILER	=	c++
 
-CFLAGS		=	-Wall -Wextra -Werror -std=c++98 -fsanitize=address
+CFLAGS		=	-Wall -Wextra -Werror -std=c++98
 
 SRC			=	Cat.cpp \
 				Dog.cpp \

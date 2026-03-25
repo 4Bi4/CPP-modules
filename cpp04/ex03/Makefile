@@ -1,14 +1,15 @@
-NAME		=	polymorph2.0
+NAME		=	interface
 
 COMPILER	=	c++
 
-CFLAGS		=	-Wall -Wextra -Werror -std=c++98 #-fsanitize=address
+CFLAGS		=	-Wall -Wextra -Werror -std=c++98
 
-SRC			=	Cat.cpp \
-				Dog.cpp \
+SRC			=	Ice.cpp \
 				main.cpp \
-				Brain.cpp \
-				Animal.cpp
+				Cure.cpp \
+				AMateria.cpp \
+				Character.cpp \
+				MateriaSource.cpp
 
 all: $(NAME)
 

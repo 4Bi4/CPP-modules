@@ -6,7 +6,7 @@
 /*   By: labia-fe <labia-fe@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/23 20:30:31 by labia-fe          #+#    #+#             */
-/*   Updated: 2026/03/25 05:51:30 by labia-fe         ###   ########.fr       */
+/*   Updated: 2026/03/25 06:24:54 by labia-fe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,9 @@ int	main()
 	//	Change one brain idea just to one clone
 	rufo.setIdea("ya no quiero salshisha, ahora quiero ser feliz", 0);
 
-	std::cout << "\n\nRufo dice: " << rufo.getIdea(0) << "\nel otro perro dice: " << dynamic_cast<Dog*>(pets[1])->getIdea(0) << "\n" << std::endl;
+	std::cout << "\n\nRufo dice: " << rufo.getIdea(0)
+		<< "\nel otro perro dice: " << dynamic_cast<Dog*>(pets[1])->getIdea(0)
+		<< "\n" << std::endl;
 
 	//	Deleting OG dog
 	delete (pets[1]);
