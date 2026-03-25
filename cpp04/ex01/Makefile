@@ -2,7 +2,7 @@ NAME		=	polymorph2.0
 
 COMPILER	=	c++
 
-CFLAGS		=	-Wall -Wextra -Werror -std=c++98 #-fsanitize=address
+CFLAGS		=	-Wall -Wextra -Werror -std=c++98
 
 SRC			=	Cat.cpp \
 				Dog.cpp \
