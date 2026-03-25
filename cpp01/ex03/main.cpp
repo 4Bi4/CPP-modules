@@ -6,7 +6,7 @@
 /*   By: labia-fe <labia-fe@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/01 21:35:34 by labia-fe          #+#    #+#             */
-/*   Updated: 2026/03/01 21:59:05 by labia-fe         ###   ########.fr       */
+/*   Updated: 2026/03/25 02:38:01 by labia-fe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int main(void)
 	// Summon some humans
 	HumanA	Hudson = HumanA("Hudson", stick);
 	HumanA	Link = HumanA("Link", sword);
-	
+
 	HumanB	Terry = HumanB("Terry");
 	Terry.setWeapon(club);
 	HumanB	Tulin = HumanB("Tulin");
