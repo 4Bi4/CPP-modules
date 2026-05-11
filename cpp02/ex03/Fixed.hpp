@@ -26,7 +26,7 @@ public:
 	~Fixed();
 
 	//	Assignment operator
-	Fixed& operator=(const Fixed& other);
+	Fixed&	operator=(const Fixed& other);
 
 	//	Comparison operators
 	bool	operator>(const Fixed& other) const;
