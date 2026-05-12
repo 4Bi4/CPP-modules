@@ -2,16 +2,12 @@
 
 Bureaucrat::Bureaucrat() :
 	_name("Unidentified bureaucrat"),
-	_grade(150)
-{
-	std::cout << "Default constructor - [ Bureaucrat ]" << std::endl;
-}
+	_grade(150) {}
 
 Bureaucrat::Bureaucrat(const std::string &name, int grade) :
 	_name(name),
 	_grade(grade)
 {
-	std::cout << "Parametric constructor - [ Bureaucrat ]" << std::endl;
 	if (grade < 1)
 		throw GradeTooHighException();
 	if (grade > 150)
@@ -21,19 +17,12 @@ Bureaucrat::Bureaucrat(const std::string &name, int grade) :
 
 Bureaucrat::Bureaucrat(const Bureaucrat &copy) :
 	_name(copy._name),
-	_grade(copy._grade)
-{
-	std::cout << "Copy constructor - [ Bureaucrat ]" << std::endl;
-}
+	_grade(copy._grade) {}
 
-Bureaucrat::~Bureaucrat()
-{
-	std::cout << "Destructor - [ Bureaucrat ]" << std::endl;
-}
+Bureaucrat::~Bureaucrat() {}
 
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &src)
 {
-	std::cout << "Assignment operator - [ Bureaucrat ]" << std::endl;
 	if (this == &src)
 		return (*this);
 	this->_grade = src._grade;
@@ -59,7 +48,8 @@ void	Bureaucrat::signForm(class Form &form)
 	}
 	catch (std::exception &e)
 	{
-		std::cout << "Exception: " << e.what() << std::endl;
+		std::cout << this->_name << " couldn't sign " << form.getName()
+				  << " because " << e.what() << std::endl;
 	}
 }
 
@@ -89,6 +79,6 @@ const char *Bureaucrat::GradeTooLowException::what() const throw()
 
 std::ostream &operator<<(std::ostream &out, const Bureaucrat &bureaucrat)
 {
-	out << bureaucrat.getName() << ", bureaucrat grade " << bureaucrat.getGrade();
+	out << bureaucrat.getName() << ", bureaucrat grade " << bureaucrat.getGrade() << ".";
 	return (out);
 }

@@ -1,4 +1,4 @@
-NAME		=	bureaucrat
+NAME		=	ex01
 
 COMPILER	=	c++
 

@@ -63,5 +63,6 @@ int	main(void)
 		std::cerr << e.what() << std::endl;
 	}
 
+	std::cout << "\n=== Test finished succesfully ===" << std::endl;
 	return (0);
 }

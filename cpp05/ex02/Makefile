@@ -1,11 +1,15 @@
-NAME		=	ex00
+NAME		=	ex02
 
 COMPILER	=	c++
 
 CFLAGS		=	-Wall -Wextra -Werror -std=c++98
 
 SRC			=	Bureaucrat.cpp \
-				main.cpp
+				AForm.cpp \
+				main.cpp \
+				RobotomyRequestForm.cpp \
+				ShrubberyCreationForm.cpp \
+				PresidentialPardonForm.cpp
 
 all: $(NAME)
 

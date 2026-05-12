@@ -2,16 +2,8 @@
 //	Form already includes Bureaucrat
 #include "Form.hpp"
 
-int main(int argc, char *argv[])
+int main(void)
 {
-	(void)argv;
-	
-	if (argc != 1)
-	{
-		std::cerr << "Please do not add arguments to the executable." << std::endl;
-		return (1);
-	}
-
 	std::cout << "\n=== Testing Form Class ===" << std::endl;
 
 	try
@@ -20,8 +12,7 @@ int main(int argc, char *argv[])
 		Form form1("Tax Form", 50, 25);
 		std::cout << form1 << std::endl;
 	}
-	catch (std::exception &e)
-	{
+	catch (std::exception &e) {
 		std::cout << "Exception: " << e.what() << std::endl;
 	}
 
@@ -30,8 +21,7 @@ int main(int argc, char *argv[])
 		std::cout << "\n--- Test 2: Form with grade too high (0) ---" << std::endl;
 		Form form2("Invalid Form", 0, 25);
 	}
-	catch (std::exception &e)
-	{
+	catch (std::exception &e) {
 		std::cout << "Exception: " << e.what() << std::endl;
 	}
 
@@ -40,8 +30,7 @@ int main(int argc, char *argv[])
 		std::cout << "\n--- Test 3: Form with grade too low (151) ---" << std::endl;
 		Form form3("Invalid Form", 50, 151);
 	}
-	catch (std::exception &e)
-	{
+	catch (std::exception &e) {
 		std::cout << "Exception: " << e.what() << std::endl;
 	}
 
@@ -57,8 +46,7 @@ int main(int argc, char *argv[])
 		bob.signForm(taxForm);
 		std::cout << taxForm << std::endl;
 	}
-	catch (std::exception &e)
-	{
+	catch (std::exception &e) {
 		std::cout << "Exception: " << e.what() << std::endl;
 	}
 
@@ -72,8 +60,7 @@ int main(int argc, char *argv[])
 		lowBob.signForm(secretForm);
 		std::cout << secretForm << std::endl;
 	}
-	catch (std::exception &e)
-	{
+	catch (std::exception &e) {
 		std::cout << "Exception: " << e.what() << std::endl;
 	}
 
@@ -86,11 +73,10 @@ int main(int argc, char *argv[])
 		std::cout << topSecret << std::endl;
 		topSecret.beSigned(intern);
 	}
-	catch (std::exception &e)
-	{
+	catch (std::exception &e) {
 		std::cout << "Exception caught: " << e.what() << std::endl;
 	}
 
-	std::cout << "\n=== All tests completed ===" << std::endl;
+	std::cout << "\n=== Test finished succesfully ===" << std::endl;
 	return (0);
 }
