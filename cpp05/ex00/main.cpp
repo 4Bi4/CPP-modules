@@ -11,8 +11,7 @@ int	main(void)
 		std::cout << b1 << std::endl;
 		b1.promote();
 	}
-	catch (const std::exception &e)
-	{
+	catch (const std::exception &e) {
 		std::cerr << e.what() << std::endl;
 	}
 	//	The error message comes up after the Bureaucrat destructor message
@@ -26,8 +25,7 @@ int	main(void)
 		std::cout << b2 << std::endl;
 		b2.demote();
 	}
-	catch (const std::exception &e)
-	{
+	catch (const std::exception &e) {
 		std::cerr << e.what() << std::endl;
 	}
 
@@ -38,8 +36,7 @@ int	main(void)
 	{
 		Bureaucrat	b0("Invalid", 0);
 	}
-	catch (const std::exception &e)
-	{
+	catch (const std::exception &e) {
 		std::cerr << e.what() << std::endl;
 	}
 
@@ -48,18 +45,16 @@ int	main(void)
 	{
 		Bureaucrat	b3("Invalid", 151);
 	}
-	catch (const std::exception &e)
-	{
+	catch (const std::exception &e) {
 		std::cerr << e.what() << std::endl;
 	}
 
-	std::cout << "\nCreating Bureaucrat with grade -20000 (impossible):" << std::endl;
+	std::cout << "\nCreating Bureaucrat with grade -20000 (imposible):" << std::endl;
 	try
 	{
-		Bureaucrat	b4("Impossible", -20000);
+		Bureaucrat	b4("Imposible", -20000);
 	}
-	catch (const std::exception &e)
-	{
+	catch (const std::exception &e) {
 		std::cerr << e.what() << std::endl;
 	}
 
