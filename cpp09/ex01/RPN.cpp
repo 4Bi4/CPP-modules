@@ -1,6 +1,6 @@
-#include "RPN.hpp"
 #include <iostream>
 #include <sstream>
+#include "RPN.hpp"
 
 RPN::RPN() {}
 
@@ -25,9 +25,7 @@ bool RPN::evaluate(const std::string &expr, int &result) const
 	while (iss >> token)
 	{
 		if (token.size() == 1 && token[0] >= '0' && token[0] <= '9')
-		{
 			stack.push(token[0] - '0');
-		}
 		else if (token == "+" || token == "-" || token == "*" || token == "/")
 		{
 			if (stack.size() < 2)
@@ -35,12 +33,17 @@ bool RPN::evaluate(const std::string &expr, int &result) const
 				std::cerr << "Error" << std::endl;
 				return (false);
 			}
-			int b = stack.top(); stack.pop();
-			int a = stack.top(); stack.pop();
+			int b = stack.top();
+			stack.pop();
+			int a = stack.top();
+			stack.pop();
 
-			if (token == "+" ) stack.push(a + b);
-			else if (token == "-") stack.push(a - b);
-			else if (token == "*") stack.push(a * b);
+			if (token == "+" )
+				stack.push(a + b);
+			else if (token == "-")
+				stack.push(a - b);
+			else if (token == "*")
+				stack.push(a * b);
 			else
 			{
 				if (b == 0)
